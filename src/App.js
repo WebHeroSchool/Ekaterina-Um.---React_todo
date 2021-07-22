@@ -1,7 +1,14 @@
 import Reacr from 'react';
 
-const element = (<p>
-  Hello!
-</p>);
+const ItemList = () => (<ul>
+  <li>Помидоры</li>
+  <li>Огурцы</li>
+  <li>Лук</li>
+</ul>);
 
-export { element };
+const App = () => (<div>
+  <h3>Список покупок:</h3>
+  <ItemList />
+</div>);
+
+export default App;
