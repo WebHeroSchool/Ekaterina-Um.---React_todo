@@ -9,13 +9,16 @@ const todoItem = 'Дело1';
 const App = () => {
   const items = [
     {
-      value: 'Дело1'
+      value: 'Дело1',
+      isDone: false
     },
     {
-      value: 'Дело2'
+      value: 'Дело2',
+      isDone: false
     },
     {
-      value: 'Дело3'
+      value: 'Дело3',
+      isDone: true
     }
   ];
 
