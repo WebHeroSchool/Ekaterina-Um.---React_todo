@@ -1,10 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
+import styles from './ItemList.module.css';
 
-const ItemList = ({ items }) => (<ul>
-  {items.map(item => <li key={item.value}>
+const ItemList = ({ items }) => (<div>
+  {items.map(item => <p className={styles.item} key={item.value}>
     <Item value={item.value} isDone={item.isDone} />
-  </li>)}
-</ul>);
+  </p>)}
+</div>);
 
 export default ItemList;

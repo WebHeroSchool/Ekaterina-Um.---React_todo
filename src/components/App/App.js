@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomizedInputs from '../Filter/Filter';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
@@ -23,14 +24,17 @@ const App = () => {
   ];
 
   return (
-  <div className={styles.wrap}>
-    <h2>Мои дела:</h2>
-    <InputItem />
-    <ItemList items = { items }/>
-    <Footer count={3}/>
+  <div>
+    <p className={styles.title}>Мои дела:</p>
+    <div className={styles.wrap}>
+      <CustomizedInputs />
+      <InputItem />
+      <ItemList items = {items}/>
+      <Footer count={3}/>
+    </div>
   </div>);
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Amatic+SC&display=swap');
   </style>
 }
 
