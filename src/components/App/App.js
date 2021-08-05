@@ -5,8 +5,6 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const todoItem = 'Дело1';
-
 const App = () => {
   const items = [
     {

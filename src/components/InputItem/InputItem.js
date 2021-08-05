@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './InputItem.module.css';
 import {
   alpha,
   ThemeProvider,
@@ -39,19 +40,12 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: '0px',
-  },
-}));
-
 export default function CustomizedInputs() {
-  const classes = useStyles();
 
   return (
     <form noValidate>
       <CssTextField
-        className={classes.margin}
+        className={styles.margin}
         label="Новое дело"
         variant="outlined"
         id="custom-css-outlined-input"
