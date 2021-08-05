@@ -23,7 +23,7 @@ const App = () => {
 
   return (
   <div>
-    <p className={styles.title}>Мои дела:</p>
+    <div className={styles.title}>Мои дела:</div>
     <div className={styles.wrap}>
       <CustomizedInputs />
       <InputItem />
@@ -31,9 +31,6 @@ const App = () => {
       <Footer count={3}/>
     </div>
   </div>);
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Amatic+SC&display=swap');
-  </style>
 }
 
 export default App;

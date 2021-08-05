@@ -3,9 +3,9 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
 const ItemList = ({ items }) => (<div>
-  {items.map(item => <p className={styles.item} key={item.value}>
+  {items.map(item => <div className={styles.item} key={item.value}>
     <Item value={item.value} isDone={item.isDone} />
-  </p>)}
+  </div>)}
 </div>);
 
 export default ItemList;
