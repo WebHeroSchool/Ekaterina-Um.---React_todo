@@ -1,6 +1,9 @@
-.item{
-  color: #000;
+.root{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .done{
-  color: #c4c4c4;
+  color: #F7D5EE;
+  text-decoration: line-through;
 }
