@@ -6,29 +6,31 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
 class App extends React.Component {
+    state = {
+      items: [
+        {
+          value: 'Дело1',
+          isDone: false
+        },
+        {
+          value: 'Дело2',
+          isDone: false
+        },
+        {
+          value: 'Дело3',
+          isDone: true
+        }
+      ]
+    };
+    
      render() {
-       const items = [
-         {
-           value: 'Дело1',
-           isDone: false
-         },
-         {
-           value: 'Дело2',
-           isDone: false
-         },
-         {
-           value: 'Дело3',
-           isDone: true
-         }
-       ];
-
        return (
          <div>
            <div className={styles.title}>Мои дела:</div>
            <div className={styles.wrap}>
              <CustomizedInputs />
              <InputItem />
-             <ItemList items = {items}/>
+             <ItemList items = {this.state.items}/>
              <Footer count={3}/>
            </div>
          </div>);
