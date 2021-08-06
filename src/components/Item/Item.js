@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-export default function Checkboxes({ value, isDone, onClickDone}) {
+export default function Checkboxes({ value, isDone, onClickDone, id}) {
 
   return (
     <div className={styles.root}>
@@ -13,7 +13,7 @@ export default function Checkboxes({ value, isDone, onClickDone}) {
         <Checkbox
           checked={isDone}
           inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-          onClick={() => onClickDone(isDone)}
+          onClick={() => onClickDone(id)}
         />
         <span className={
           classnames({
