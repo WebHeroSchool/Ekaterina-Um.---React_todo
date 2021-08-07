@@ -22,7 +22,9 @@ class App extends React.Component {
         }
       ]
     };
-    
+
+    onClickDone = isDone => console.log(isDone);
+
      render() {
        return (
          <div>
@@ -30,7 +32,7 @@ class App extends React.Component {
            <div className={styles.wrap}>
              <CustomizedInputs />
              <InputItem />
-             <ItemList items = {this.state.items}/>
+             <ItemList items = {this.state.items} onClickDone={this.onClickDone}/>
              <Footer count={3}/>
            </div>
          </div>);
