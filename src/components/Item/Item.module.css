@@ -1,0 +1,9 @@
+.root{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.done{
+  color: #F7D5EE;
+  text-decoration: line-through;
+}
