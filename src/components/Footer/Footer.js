@@ -7,4 +7,8 @@ const Footer = ({count}) => (<div className={styles.footer}>
   <IconLabelButtons />
 </div>);
 
+Footer.defaultProps = {
+  count: 3
+};
+
 export default Footer;
