@@ -23,7 +23,8 @@ class App extends React.Component {
           isDone: true,
           id: 3
         }
-      ]
+      ],
+      count: 3
     };
 
     onClickDone = id => {
@@ -44,13 +45,25 @@ class App extends React.Component {
       this.setState({ items: newItemList });
     };
 
+    onClickAdd = value => this.setState(state => ({
+      items: [
+        ...state.items,
+        {
+          value,
+          isDone: false,
+          id: state.count + 1
+        }
+      ],
+      count: state.count + 1
+    }));
+
    render() {
      return (
        <div>
          <div className={styles.title}>Мои дела:</div>
          <div className={styles.wrap}>
            <CustomizedInputs />
-           <InputItem />
+           <InputItem onClickAdd={this.onClickAdd}/>
            <ItemList
               items = {this.state.items}
               onClickDone={this.onClickDone}
