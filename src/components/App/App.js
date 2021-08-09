@@ -37,18 +37,29 @@ class App extends React.Component {
       this.setState({ items: newItemList });
     };
 
-     render() {
-       return (
-         <div>
-           <div className={styles.title}>Мои дела:</div>
-           <div className={styles.wrap}>
-             <CustomizedInputs />
-             <InputItem />
-             <ItemList items = {this.state.items} onClickDone={this.onClickDone}/>
-             <Footer count={3}/>
-           </div>
-         </div>);
-     }
+    onClickDelete = id => {
+      const newItemList = this.state.items.filter(item => {
+        return item.id !== id;
+      });
+      this.setState({ items: newItemList });
+    };
+
+   render() {
+     return (
+       <div>
+         <div className={styles.title}>Мои дела:</div>
+         <div className={styles.wrap}>
+           <CustomizedInputs />
+           <InputItem />
+           <ItemList
+              items = {this.state.items}
+              onClickDone={this.onClickDone}
+              onClickDelete={this.onClickDelete}
+            />
+           <Footer count={3}/>
+         </div>
+       </div>);
+   }
 };
 
 export default App;
