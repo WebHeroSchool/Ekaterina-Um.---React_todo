@@ -1,3 +1,17 @@
+.root{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .margin {
   margin: 0px;
+}
+.button {
+  margin-top: 7px;
+  margin-right: 10px;
+  background-color: #F7D5EE;
+  font-size: 10px;
+  line-height: 10px;
+  width: 120px;
+  height: 36px;
 }
