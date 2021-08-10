@@ -45,7 +45,7 @@ const CssTextField = withStyles({
 //   },
 // }));
 
-class CustomizedInputs extends React.Component {
+class InputItem extends React.Component {
   state = {
     inputValue: ''
   };
@@ -65,7 +65,6 @@ class CustomizedInputs extends React.Component {
 }
 
   render() {
-    const { onClickAdd } = this.props;
 
     return(<div className={styles.root}>
       <form noValidate>
@@ -97,8 +96,8 @@ class CustomizedInputs extends React.Component {
   }
 }
 
-CustomizedInputs.propTypes = {
+InputItem.propTypes = {
   onClickAdd: PropTypes.func.isRequired
 };
 
-export default CustomizedInputs;
+export default InputItem;

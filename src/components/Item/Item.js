@@ -6,13 +6,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-class Checkboxes extends React.Component{
-  componentDidMount(){
-    this.timerID = setInterval(() => console.log('Создан пункт списка'), 1000);
-  }
-  componentWillUnmount(){
-    clearInterval(this.timerID);
-  }
+class Item extends React.Component{
+  // componentDidMount(){
+  //   this.timerID = setInterval(() => console.log('Создан пункт списка'), 1000);
+  // }
+  // componentWillUnmount(){
+  //   clearInterval(this.timerID);
+  // }
 
   render(){
 
@@ -43,14 +43,14 @@ class Checkboxes extends React.Component{
   }
 }
 
-export default Checkboxes;
+export default Item;
 
-Checkboxes.defaultProps = {
+Item.defaultProps = {
   value: '',
   isDone: false
 };
 
-Checkboxes.propTypes = {
+Item.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.string.isRequired,
     PropTypes.number.isRequired
