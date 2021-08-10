@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CustomizedInputs from '../Filter/Filter';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
@@ -24,6 +25,7 @@ class App extends React.Component {
           id: 3
         }
       ],
+      count: 3,
     };
 
     onClickDone = id => {
@@ -72,6 +74,10 @@ class App extends React.Component {
          </div>
        </div>);
    }
+};
+
+App.propTypes = {
+  items: PropTypes.array
 };
 
 export default App;

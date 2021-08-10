@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 import classnames from 'classnames';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -6,6 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 class Checkboxes extends React.Component{
+
+  componentDidMount(){
+    this.timerID = setInterval(() => console.log('Создан пункт списка'), 1000);
+  }
+  componentWillUnmount(){
+    clearInterval(this.timerID);
+  }
 
   render(){
 
@@ -41,4 +49,15 @@ export default Checkboxes;
 Checkboxes.defaultProps = {
   value: '',
   isDone: false
+};
+
+Checkboxes.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired
+  ]),
+  isDone: PropTypes.bool.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
 };
