@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 import classnames from 'classnames';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -30,3 +31,19 @@ export default function Checkboxes({ value, isDone, onClickDone, onClickDelete, 
     </div>
   );
 }
+
+Checkboxes.defaultProps = {
+  value: '',
+  isDone: false
+};
+
+Checkboxes.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired
+  ]),
+  isDone: PropTypes.bool.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
+};

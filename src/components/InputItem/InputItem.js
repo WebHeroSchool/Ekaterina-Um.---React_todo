@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './InputItem.module.css';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -94,5 +96,9 @@ class CustomizedInputs extends React.Component {
     </div>);
   }
 }
+
+CustomizedInputs.propTypes = {
+  onClickAdd: PropTypes.func.isRequired
+};
 
 export default CustomizedInputs;
