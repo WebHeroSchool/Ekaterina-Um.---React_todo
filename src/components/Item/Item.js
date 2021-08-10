@@ -8,13 +8,10 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class Checkboxes extends React.Component{
   componentDidMount(){
-    console.log('componentDidMount');
-  }
-  compomentDidUpdate(){
-    console.log('compomentDidUpdate');
+    this.timerID = setInterval(() => console.log('Создан пункт списка'), 1000);
   }
   componentWillUnmount(){
-    console.log('componentWillUnmount');
+    clearInterval(this.timerID);
   }
 
   render(){
