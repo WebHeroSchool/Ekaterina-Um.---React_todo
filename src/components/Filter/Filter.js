@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function BasicButtonGroup() {
+export default function Filter() {
   const classes = useStyles();
 
   return (
