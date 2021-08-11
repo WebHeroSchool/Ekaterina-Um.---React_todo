@@ -15,8 +15,8 @@ const Todo = () => {
   ]);
   const [count, setCount] = useState(3);
 
-  useEffect(() => { console.log('update'); });
-  useEffect(() => { console.log('mount'); });
+  // useEffect(() => { console.log('update'); });
+  // useEffect(() => { console.log('mount'); });
 
   const onClickDone = id => {
     const newItemList = items.map(item => {
