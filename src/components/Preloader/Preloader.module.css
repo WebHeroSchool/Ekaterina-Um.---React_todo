@@ -5,8 +5,7 @@
   100% { transform: rotate(360deg) }
 }
 .ldio {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 180px auto auto auto;
   width: 50px;
   height: 50px;
   border-radius: 50%;

@@ -1,17 +1,67 @@
-.root{
-  display:flex;
-  flex-direction: row;
+.input {
+  position: absolute;
+  display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
 }
-.margin {
-  margin: 0px;
-}
-.button {
-  margin-top: 7px;
+.input__error {
   margin-right: 10px;
-  background-color: #F7D5EE;
-  font-size: 10px;
-  line-height: 10px;
-  width: 120px;
+  flex-grow: 1;
+}
+.input__error_empty, .input__error_exist{
+  position: relative;
+}
+.input__error_empty:before, .input__error_exist:before{
+  position: absolute;
+  content: 'Нельзя внести пустое дело. Введите текст.';
+  padding: 8px;
+  width: 242px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #356EFF;
+  border-radius: 6px;
+  transform: translateY(-130%);
+}
+.input__error_empty:before{
+  content: 'Нельзя внести пустое дело. Введите текст.';
+}
+.input__error_exist:before{
+  content: 'Такая задача уже есть в вашем списке. Введите другое название.';
+}
+.input__error_empty:after, .input__error_exist:after{
+  content: '';
+  position: absolute;
+  left: 10px;
+  border: 10px solid transparent;
+  border-top-color: #356EFF;
+  transform: translateY(-80%);
+}
+.input__wrap {
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 41px;
   height: 36px;
+  width: 100%;
+  outline: none;
+  padding: 0 12px;
+}
+.btn-sub {
+  height: 36px;
+  width: 36px;
+}
+@media (max-width: 610px){
+  .input__wrap{
+    height: 30px;
+    font-size: 10px;
+  }
+  .btn-sub {
+    height: 30px;
+    width: 30px;
+  }
+  .input__error_empty:before, .input__error_exist:before{
+    width: 150px;
+    font-size: 10px;
+    line-height: 10px;
+  }
 }

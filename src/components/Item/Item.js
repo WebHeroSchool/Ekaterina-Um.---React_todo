@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 import classnames from 'classnames';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 class Item extends React.Component{
   // componentDidMount(){
@@ -15,29 +12,35 @@ class Item extends React.Component{
   // }
 
   render(){
-
     const { value, isDone, onClickDone, onClickDelete, id } = this.props;
 
     return(
-      <div className={styles.root}>
-        <label>
-          <Checkbox
-            checked={isDone}
-            inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-            onClick={() => onClickDone(id)}
-          />
+      <div className={styles.item}>
+        <input
+          type="checkbox"
+          className={styles.checkbox}
+          id={id}
+          defaultChecked={isDone}
+        />
+        <label
+          htmlFor={id}
+          onClick={() => onClickDone(id)}
+        >
           <span className={
             classnames({
-              [styles.done]: isDone,
-            })}>
+              [styles.text]: true,
+              [styles.done]: isDone
+            })}
+          >
             {value}
           </span>
         </label>
-        <span>
-          <IconButton onClick={() => onClickDelete(id)}>
-            <DeleteIcon />
-          </IconButton>
-        </span>
+        <img
+          src="/img/btn_dlt.svg"
+          alt="delete"
+          className={styles.btn}
+          onClick={() => onClickDelete(id)}
+        />
       </div>
     )
   }
