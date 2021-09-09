@@ -40,4 +40,18 @@
   .items{
     height: 340px;
   }
+  .empty-list{
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .empty-list__img{
+    height: 120px;
+  }
+  .empty-list__header{
+    margin-top: 5px;
+  }
+  .empty-list__header-sub{
+    font-size: 12px;
+    line-height: 12px;
+  }
 }

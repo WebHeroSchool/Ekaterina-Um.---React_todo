@@ -108,4 +108,23 @@
   .name{
     font-size: 20px;
   }
+  .nodownload{
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .nodownload__img{
+    height: 100px;
+  }
+  .nodownload__header{
+    margin-top: 10px;
+    margin-bottom: 3px;
+  }
+  .nodownload__header-sub{
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .nodownload__header-sub_link{
+    font-size: 12px;
+    line-height: 12px;
+  }
 }

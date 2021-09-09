@@ -10,7 +10,7 @@ body{
   text-align: right;
   font: 400 14px/16px Roboto, sans-serif;
   color: #CCC;
-  width: 700px;
+  width: 690px;
   margin: 10px auto 3px auto;
 }
 .menu{
@@ -37,13 +37,36 @@ body{
   border-radius: 37px;
   padding: 12px 32px;
 }
-@media (min-width: 400px) and (max-width: 730px){
+@media (min-width: 600px) and (max-width: 730px){
   .wrap{
     height: 100%;
   }
   .made{
+    width: 99%;
+    margin: 10px 10px 10px auto;
+  }
+}
+@media (min-width: 400px) and (max-width: 600px){
+  .wrap{
+    height: 90%;
+  }
+  .made{
     width: 100%;
     margin: 10px 10px 10px auto;
+  }
+  .menu{
+    width: 300px;
+  }
+  .item{
+    font-size: 14px;
+    line-height: 12px;
+    padding: 12px 24px;
+  }
+  .item:hover{
+    padding: 12px 24px;
+  }
+  .item__active{
+    padding: 12px 24px;
   }
 }
 @media (max-width: 400px){
