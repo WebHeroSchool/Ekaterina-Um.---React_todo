@@ -80,11 +80,14 @@
   margin: 0px auto 30px auto;
 }
 .link{
+  text-decoration: none;
   color: #999;
   font: 400 12px/20px 'Roboto', sans-serif;
 }
 .link:hover{
   text-decoration: underline;
+  color: #356EFF;
+  cursor: pointer;
 }
 @media (min-width: 500px) and (max-width: 730px){
   .wrap{

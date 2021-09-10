@@ -46,10 +46,25 @@
   outline: none;
   padding: 0 12px;
 }
+.input__wrap:hover{
+  border-color: #356EFF;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
 .btn-sub {
   height: 36px;
   width: 36px;
 }
+.btn-sub:hover{
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 2px;
+  background: #80A4FF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
 @media (max-width: 610px){
   .input__wrap{
     height: 30px;

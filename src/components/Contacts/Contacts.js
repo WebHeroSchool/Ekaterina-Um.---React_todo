@@ -8,13 +8,13 @@ export default function Contacts() {
         <div className={styles.contacts__one}>
           <div>
             <a className={styles.link} href="mailto:eum.dev@gmail.com">
-              <img src='/img/mail_logo.svg' alt='mail'/>
+              <img className={styles.['contacts__img']} src='/img/mail_logo.svg' alt='mail'/>
               <div>eum.dev@gmail.com</div>
             </a>
           </div>
           <div>
             <a className={styles.link} href="tg://resolve?domain=shtuchka666">
-              <img src='/img/telegram_logo.svg' alt='telegram'/>
+              <img className={styles.['contacts__img']} src='/img/telegram_logo.svg' alt='telegram'/>
               <div>Написать в Telegram</div>
             </a>
           </div>
@@ -22,13 +22,13 @@ export default function Contacts() {
         <div className={styles.contacts__two}>
           <div>
             <a className={styles.link} href="skype:логин?userinfo">
-              <img src='/img/skype_logo.svg' alt='skype'/>
+              <img className={styles.['contacts__img']} src='/img/skype_logo.svg' alt='skype'/>
               <div>Написать в Skype</div>
             </a>
           </div>
           <div>
             <a className={styles.link} href='https://www.instagram.com/shtuchka.666/'>
-              <img src='/img/instagram_logo.svg' alt='instagram'/>
+              <img className={styles.['contacts__img']} src='/img/instagram_logo.svg' alt='instagram'/>
               <div>Открыть instagram</div>
             </a>
           </div>

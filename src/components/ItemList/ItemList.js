@@ -4,7 +4,7 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
 export default function ItemList ({ items, onClickDone, onClickDelete, activeFilter }) {
-  function filter(item) {
+  function fltr(item) {
     if (activeFilter === 'all') return item;
     else if (activeFilter === 'completed') return item.isDone;
     else return !item.isDone;
@@ -13,7 +13,7 @@ export default function ItemList ({ items, onClickDone, onClickDelete, activeFil
   return(
       <div className={styles.items}>
         {items.length > 0 && <ul>
-          {items.filter(item => filter(item)).map(item => (
+          {items.filter(item => fltr(item)).map(item => (
             <li key={item.id} className={styles.item}>
             <Item
               value={item.value}

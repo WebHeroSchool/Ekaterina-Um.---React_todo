@@ -35,9 +35,7 @@ class Item extends React.Component{
             {value}
           </span>
         </label>
-        <img
-          src="/img/btn_dlt.svg"
-          alt="delete"
+        <button
           className={styles.btn}
           onClick={() => onClickDelete(id)}
         />

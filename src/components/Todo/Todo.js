@@ -27,7 +27,10 @@ class Todo extends React.Component {
   };
 
   onClickDelete = id => {
-    const newItemList = this.state.items.filter(item => item.id !== id);
+    const newItemList = this.state.items.filter(item => {
+      return item.id !== id;
+    });
+
     this.setState({ items: newItemList });
   };
 
