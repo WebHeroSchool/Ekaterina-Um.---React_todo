@@ -12,6 +12,7 @@ class Todo extends React.Component {
         { value: 'Дело2', isDone: false, id: 2 },
         { value: 'Дело3', isDone: true, id: 3}
       ],
+      count: 3,
       activeFilter: 'all',
     };
 
@@ -41,9 +42,10 @@ class Todo extends React.Component {
         {
           value,
           isDone: false,
-          id: this.state.items.length + 1
+          id: this.state.count + 1
         }
-      ]
+      ],
+      count: this.state.count + 1
     }));
 
   onClickFilter = item =>

@@ -51,11 +51,15 @@
   line-height: 16px;
   color: #999;
 }
-.nodownload__header-sub_link{
+.nodownload__header-sub_link, .nodownload__header-sub_btn{
   text-decoration: underline;
   color: #356EFF;
   font-size: 14px;
   line-height: 16px;
+  cursor: pointer;
+}
+.nodownload__header-sub_btn{
+  background: transparent;
 }
 .avatar__wrap{
   height: 90%;

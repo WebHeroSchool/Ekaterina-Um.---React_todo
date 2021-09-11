@@ -36,6 +36,12 @@ ul{
   color: #000;
   word-break: break-all;
 }
+.wrap-name-repo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
 .link{
   text-decoration: none;
   color: #999;

@@ -64,6 +64,8 @@ class About extends React.Component {
       lastRepo: this.state.lastRepo + 4
     }));
 
+  refreshPage = () => window.location.reload();
+
   render(){
     const { isLoading, infoUser, isError, repoList } = this.state;
 
@@ -85,12 +87,12 @@ class About extends React.Component {
                 <div className={styles.title}>Репозитории на github.com</div>
                 <img className={styles.['nodownload__img']} src='./img/img_for_repo.svg' alt='error'/>
                 <div className={styles.['nodownload__header']}>Что-то пошло не так...</div>
-                <div className={styles.['nodownload__header-sub']}>Попробуйте <a className={styles.['nodownload__header-sub_link']} href={infoUser.html_url}>загрузить</a> ещё раз</div>
+                <div className={styles.['nodownload__header-sub']}>Попробуйте<button className={styles.['nodownload__header-sub_btn']} onClick={this.refreshPage}>загрузить</button>ещё раз</div>
               </div>
             </div>
           </div>
         )}
-        { !isLoading && !isError && repoList.length === 0 ? (
+        { !isLoading && !isError && repoList.length === 0 && (
           <div>
             <div className={styles.['wrap__userinfo']}>
               <figure className={styles.['avatar__wrap']}>
@@ -111,7 +113,8 @@ class About extends React.Component {
               </div>
             </div>
           </div>
-        ) :
+        )}
+        { !isLoading && !isError && repoList.length > 0 && (
         <div>
           <div className={styles.['wrap__userinfo']}>
             <figure className={styles.['avatar__wrap']}>
@@ -133,7 +136,7 @@ class About extends React.Component {
             />
           </div>
         </div>
-      }
+      )}
     </div>)
   };
 }
