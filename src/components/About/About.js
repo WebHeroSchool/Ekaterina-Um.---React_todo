@@ -129,6 +129,7 @@ class About extends React.Component {
           <div className={styles.['wrap__repos']}>
             <MyRepo
               repoList={repoList}
+              username={username}
               firstRepo={this.state.firstRepo}
               lastRepo={this.state.lastRepo}
               onClickPrevious={this.onClickPrevious}
