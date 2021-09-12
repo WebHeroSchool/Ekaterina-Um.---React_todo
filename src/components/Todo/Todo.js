@@ -1,67 +1,82 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 //import PropTypes from 'prop-types';
 import Filter from '../Filter/Filter';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
 import styles from './Todo.module.css';
 
-const Todo = () => {
+class Todo extends React.Component {
+  state = {
+      items: [
+        { value: 'Дело1', isDone: false, id: 1 },
+        { value: 'Дело2', isDone: false, id: 2 },
+        { value: 'Дело3', isDone: true, id: 3}
+      ],
+      count: 3,
+      activeFilter: 'all',
+    };
 
-  const [items, setItems] = useState([
-    { value: 'Дело1', isDone: false, id: 1 },
-    { value: 'Дело2', isDone: false, id: 2 },
-    { value: 'Дело3', isDone: true, id: 3}
-  ]);
-  const [count, setCount] = useState(3);
-
-  // useEffect(() => { console.log('update'); });
-  // useEffect(() => { console.log('mount'); });
-
-  const onClickDone = id => {
-    const newItemList = items.map(item => {
+  onClickDone = id => {
+    const newItemList = this.state.items.map(item => {
       const newItem = { ...item};
       if (item.id === id){
         newItem.isDone = !item.isDone;
       }
       return newItem;
     });
-    setItems(newItemList);
+    this.setState({items: newItemList});
   };
 
-  const onClickDelete = id => {
-    const newItemList = items.filter( item => item.id !== id );
-    setItems(newItemList);
-    setCount(count - 1);
+  onClickDelete = id => {
+    const newItemList = this.state.items.filter(item => {
+      return item.id !== id;
+    });
+
+    this.setState({ items: newItemList });
   };
 
-  const onClickAdd = value => {
-    const newItemList = [
-      ...items,
-      {
-        value,
-        isDone: false,
-        id: count + 1
-      }
-    ];
-    setItems(newItemList);
-    setCount(count + 1);
-  };
+  onClickAdd = value =>
+    this.setState(state => ({
+      items: [
+        ...state.items,
+        {
+          value,
+          isDone: false,
+          id: this.state.count + 1
+        }
+      ],
+      count: this.state.count + 1
+    }));
 
-  return (
-    <div>
-     <div className={styles.title}>Мои дела</div>
-     <div>
-       <Filter />
-       <InputItem onClickAdd={onClickAdd}/>
-       <ItemList
-          items = {items}
-          onClickDone={onClickDone}
-          onClickDelete={onClickDelete}
+  onClickFilter = item =>
+    this.setState(state => ({
+      activeFilter: item.id
+  }));
+
+  render(){
+    return (
+      <div className={styles.wrap}>
+       <div className={styles.title}>Список моих дел</div>
+       <div>
+        <Filter
+          items = {this.state.items}
+          activeFilter = {this.state.activeFilter}
+          onClickFilter = {this.onClickFilter}
         />
-       <Footer count = {count}/>
-     </div>
-    </div>);
+        <div className={styles.wrap__items}>
+          <ItemList
+            items = {this.state.items}
+            onClickDone={this.onClickDone}
+            onClickDelete={this.onClickDelete}
+            activeFilter = {this.state.activeFilter}
+          />
+          <InputItem
+            onClickAdd={this.onClickAdd}
+            items = {this.state.items}/>
+          </div>
+       </div>
+      </div>
+    );
+  }
 };
-
 export default Todo;
